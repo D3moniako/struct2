@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="addHealthReport" class="com.example.action.HealthReportAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="error" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="getHealthReportsByAnimal" class="com.example.action.HealthReportAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="error" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+    </package>
+</struts>

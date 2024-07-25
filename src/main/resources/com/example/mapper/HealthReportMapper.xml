@@ -1,0 +1,21 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.HealthReportMapper">
+
+    <!-- Inserimento di un nuovo report -->
+    <insert id="addHealthReport" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO health_reports (animal_id, report_date, report_details)
+        VALUES (#{animalId}, #{reportDate}, #{reportDetails});
+    </insert>
+
+    <!-- Selezione dei report per ID animale -->
+    <select id="getHealthReportsByAnimal" resultType="com.example.model.HealthReport">
+        SELECT * FROM health_reports WHERE animal_id = #{animalId};
+    </select>
+
+    <!-- Creazione della tabella (se necessario) -->
+    <update id="createTable">
+        ${createTableSQL}
+    </update>
+
+</mapper>
